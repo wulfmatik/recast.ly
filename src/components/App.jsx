@@ -9,16 +9,27 @@ class App extends React.Component {
     super();
 
     this.state = {
-      videos: exampleVideoData,
-      video: exampleVideoData[0]
+      videos: [],
+      video: {}
     };
     this.handleVideoClick = this.handleVideoClick.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   handleVideoClick(video) {
     this.setState({
       video: video
     });
+  }
+
+  componentDidMount() {
+    var cb = function(data) {
+      this.setState({
+        videos: data,
+        video: data[0]
+      });
+    };
+    searchYouTube('', cb.bind(this), false);
   }
 
   render() {
