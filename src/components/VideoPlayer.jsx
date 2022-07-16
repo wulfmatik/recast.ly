@@ -1,5 +1,5 @@
 var VideoPlayer = function(props) {
-  if (Object.keys(props.video).length === 0) {
+  if (jQuery.isEmptyObject(props.video)) {
     return (
       <div className="video-player"></div>
     );

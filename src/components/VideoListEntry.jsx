@@ -1,5 +1,5 @@
 var VideoListEntry = (props) => {
-  if (Object.keys(props.video).length === 0) {
+  if (jQuery.isEmptyObject(props.video)) {
     return null;
   }
   return (
@@ -14,8 +14,6 @@ var VideoListEntry = (props) => {
     </div>
   );
 };
-
-//<div onClick={props.handleVideoClick.bind(this, props.video)} className="video-list-entry-title">{props.video.snippet.title}</div>
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
