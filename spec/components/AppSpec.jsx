@@ -14,6 +14,7 @@ describe('App', function() {
     app = renderIntoDocument(
       <App />
     );
+    console.log('logging in beforeEach');
   });
 
   it('should be a stateful class component', function() {
@@ -48,7 +49,7 @@ describe('App', function() {
     });
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
     beforeEach(function() {
       app = renderIntoDocument(
         <App />
